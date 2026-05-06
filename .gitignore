@@ -1,0 +1,13 @@
+.env
+__pycache__/
+.streamlit/secrets.toml
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.DS_Store
+*.log
+*.bak
+*.tmp
+*.swp       
