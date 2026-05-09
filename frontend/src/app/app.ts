@@ -100,6 +100,42 @@ export class App implements OnInit, OnDestroy, AfterViewChecked {
     } catch(err) { }
   }
 
+  formatMessage(text: string): string {
+    const lines = text.split('\n');
+    let html = '';
+    let inList = false;
+
+    for (const raw of lines) {
+      const line = raw.trim();
+
+      if (/^[-*]\s+/.test(line)) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += `<li>${this.inlineFmt(line.replace(/^[-*]\s+/, ''))}</li>`;
+        continue;
+      }
+
+      if (inList) { html += '</ul>'; inList = false; }
+
+      if (line === '') continue;
+
+      if (/^#{1,3}\s+/.test(line)) {
+        html += `<h4>${this.inlineFmt(line.replace(/^#{1,3}\s+/, ''))}</h4>`;
+        continue;
+      }
+
+      html += `<p>${this.inlineFmt(line)}</p>`;
+    }
+
+    if (inList) html += '</ul>';
+    return html;
+  }
+
+  private inlineFmt(text: string): string {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+  }
+
   onInputChange(event: any) {
     this.userInput.set(event);
   }

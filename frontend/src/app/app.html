@@ -149,7 +149,8 @@
             <polygon points="11,3.5 13.5,9 20,9 15,13 17,19.5 11,15.5 5,19.5 7,13 2,9 8.5,9" fill="white"/>
           </svg>
         </div>
-        <div class="bubble">{{ msg.content }}</div>
+        <div class="bubble" *ngIf="msg.role === 'assistant'" [innerHTML]="formatMessage(msg.content)"></div>
+        <div class="bubble" *ngIf="msg.role === 'user'">{{ msg.content }}</div>
       </div>
       <div class="message assistant" *ngIf="isLoading()">
         <div class="avatar">
