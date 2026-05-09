@@ -228,6 +228,44 @@
   border-bottom-left-radius: 4px;
 }
 
+/* Markdown rendered inside assistant bubbles */
+.message.assistant .bubble p {
+  margin: 0 0 6px 0;
+  line-height: 1.6;
+}
+.message.assistant .bubble p:last-child { margin-bottom: 0; }
+
+.message.assistant .bubble h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 10px 0 4px;
+  letter-spacing: -0.1px;
+}
+.message.assistant .bubble h4:first-child { margin-top: 0; }
+
+.message.assistant .bubble ul {
+  margin: 4px 0 6px;
+  padding-left: 18px;
+  list-style: none;
+}
+.message.assistant .bubble ul li {
+  position: relative;
+  padding-left: 4px;
+  margin-bottom: 4px;
+  line-height: 1.55;
+}
+.message.assistant .bubble ul li::before {
+  content: '·';
+  position: absolute;
+  left: -12px;
+  color: var(--red);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.message.assistant .bubble strong { font-weight: 700; color: var(--text-dark); }
+.message.assistant .bubble em { font-style: italic; }
+
 /* Typing indicator */
 .typing .dot {
   display: inline-block;
@@ -331,7 +369,7 @@
   position: absolute;
   top: 50%;
   left: 0;
-  width: 32%;
+  width: 42%;
   transform: translateY(-50%);
   padding: 0 0 0 32px;
   z-index: 4;
@@ -371,7 +409,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 58%;
   height: 100%;
   clip-path: polygon(
     13% 0%,
@@ -416,7 +454,7 @@
 /* ─── POSTAGE STAMP ──────────────────────────────────────────── */
 .stamp-container {
   position: absolute;
-  left: 27%;
+  left: 39%;
   top: 46%;
   transform: translateY(-50%);
   z-index: 10;
@@ -470,7 +508,7 @@
 .slide-dots {
   position: absolute;
   bottom: 28px;
-  left: 16%;
+  left: 21%;
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
