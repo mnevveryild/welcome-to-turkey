@@ -118,8 +118,8 @@
 
 /* ─── CHAT SECTION (LEFT) ───────────────────────────────────── */
 .chat-section {
-  width: 420px;
-  min-width: 420px;
+  width: 50%;
+  min-width: 0;
   background: var(--chat-bg);
   display: flex;
   flex-direction: column;
@@ -345,7 +345,8 @@
 
 /* ─── PHOTO PANEL (RIGHT) ────────────────────────────────────── */
 .photo-panel {
-  flex: 1;
+  width: 50%;
+  flex-shrink: 0;
   position: relative;
   background: var(--cream);
   overflow: hidden;
