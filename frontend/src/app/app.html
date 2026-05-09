@@ -1,33 +1,163 @@
-<!-- INTRO SCREEN -->
-<div class="intro-screen" *ngIf="showIntro()" [ngClass]="introAnimClass()">
-  <div class="intro-content">
-    <div class="logo-container">🇹🇷</div>
-    <h1 class="welcome-text">TÜRKİYE</h1>
-    <div class="loader-bar">
-      <div class="loader-progress"></div>
+<!-- SPLASH SCREEN -->
+<div class="splash-screen" *ngIf="showIntro()" [ngClass]="introAnimClass()">
+
+  <!-- Corner geometric tile decorations -->
+  <svg class="splash-corner corner-tl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="0" cy="0" r="130" stroke="#0F2D8B" stroke-width="1.5" opacity="0.45"/>
+    <circle cx="0" cy="0" r="100" stroke="#0F2D8B" stroke-width="1" opacity="0.35"/>
+    <circle cx="0" cy="0" r="70" stroke="#0F2D8B" stroke-width="1" opacity="0.25"/>
+    <polygon points="0,-120 10,-10 120,0 10,10 0,120 -10,10 -120,0 -10,-10" fill="#0F2D8B" opacity="0.18"/>
+    <polygon points="0,-90 7,-7 90,0 7,7 0,90 -7,7 -90,0 -7,-7" fill="#0F2D8B" opacity="0.22"/>
+    <circle cx="0" cy="0" r="14" fill="#0F2D8B" opacity="0.38"/>
+    <circle cx="0" cy="0" r="6" fill="#E30A17" opacity="0.6"/>
+  </svg>
+  <svg class="splash-corner corner-tr" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <circle cx="150" cy="0" r="130" stroke="#0F2D8B" stroke-width="1.5" opacity="0.45"/>
+    <circle cx="150" cy="0" r="100" stroke="#0F2D8B" stroke-width="1" opacity="0.35"/>
+    <circle cx="150" cy="0" r="70" stroke="#0F2D8B" stroke-width="1" opacity="0.25"/>
+    <polygon points="150,-120 160,-10 270,0 160,10 150,120 140,10 30,0 140,-10" fill="#0F2D8B" opacity="0.18"/>
+    <polygon points="150,-90 157,-7 240,0 157,7 150,90 143,7 60,0 143,-7" fill="#0F2D8B" opacity="0.22"/>
+    <circle cx="150" cy="0" r="14" fill="#0F2D8B" opacity="0.38"/>
+    <circle cx="150" cy="0" r="6" fill="#E30A17" opacity="0.6"/>
+  </svg>
+
+  <!-- Main title -->
+  <div class="splash-content">
+    <div class="splash-gem">
+      <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="20,2 38,20 20,38 2,20" fill="white" opacity="0.88"/>
+        <polygon points="20,10 30,20 20,30 10,20" fill="#E30A17"/>
+        <polygon points="20,15 25,20 20,25 15,20" fill="white" opacity="0.65"/>
+      </svg>
     </div>
+    <h1 class="splash-title">Türkiye</h1>
   </div>
+
+  <!-- Turkish cityscape illustration -->
+  <svg class="splash-cityscape" viewBox="0 0 1000 270" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+    <!-- Ground -->
+    <rect x="0" y="252" width="1000" height="18" fill="#0D2580"/>
+
+    <!-- Far-left rocky formations -->
+    <polygon points="0,270 8,198 22,225 38,183 52,212 66,178 78,205 90,270" fill="#1E40AF"/>
+    <polygon points="85,270 95,210 108,232 120,195 132,215 144,270" fill="#1535A0" opacity="0.8"/>
+
+    <!-- Left mosque -->
+    <rect x="155" y="193" width="8" height="59" fill="#1E40AF"/>
+    <polygon points="155,193 159,178 163,193" fill="#1535A0"/>
+    <rect x="152" y="189" width="14" height="5" fill="#1535A0"/>
+    <rect x="240" y="193" width="8" height="59" fill="#1E40AF"/>
+    <polygon points="240,193 244,178 248,193" fill="#1535A0"/>
+    <rect x="237" y="189" width="14" height="5" fill="#1535A0"/>
+    <rect x="167" y="226" width="75" height="26" fill="#1E40AF"/>
+    <ellipse cx="204" cy="226" rx="37" ry="24" fill="#1535A0"/>
+    <ellipse cx="178" cy="235" rx="15" ry="10" fill="#1E40AF"/>
+    <ellipse cx="230" cy="235" rx="15" ry="10" fill="#1E40AF"/>
+
+    <!-- Left decorative arch element -->
+    <rect x="310" y="165" width="14" height="87" fill="#1535A0"/>
+    <rect x="360" y="165" width="14" height="87" fill="#1535A0"/>
+    <path d="M 310 210 Q 337 170 374 210" fill="none" stroke="#1535A0" stroke-width="14"/>
+    <path d="M 324 210 Q 337 180 360 210 L 360 252 L 324 252 Z" fill="#E30A17" opacity="0.9"/>
+    <rect x="304" y="163" width="26" height="8" fill="#1535A0"/>
+    <rect x="354" y="163" width="26" height="8" fill="#1535A0"/>
+
+    <!-- Center grand arch / Ephesus-style gate -->
+    <rect x="415" y="85" width="24" height="167" fill="#0D2178"/>
+    <rect x="561" y="85" width="24" height="167" fill="#0D2178"/>
+    <rect x="408" y="83" width="38" height="12" fill="#0D2178"/>
+    <rect x="554" y="83" width="38" height="12" fill="#0D2178"/>
+    <rect x="408" y="237" width="38" height="12" fill="#0D2178"/>
+    <rect x="554" y="237" width="38" height="12" fill="#0D2178"/>
+    <path d="M 439 185 Q 500 115 561 185" fill="none" stroke="#0D2178" stroke-width="24"/>
+    <path d="M 439 185 Q 500 128 561 185 L 561 252 L 439 252 Z" fill="#E30A17" opacity="0.95"/>
+    <!-- Arch top ornament -->
+    <rect x="488" y="82" width="24" height="14" fill="#0D2178"/>
+    <polygon points="488,82 500,66 512,82" fill="#0D2178"/>
+    <rect x="484" y="78" width="32" height="6" fill="#0D2178"/>
+
+    <!-- Right small arch -->
+    <rect x="626" y="165" width="14" height="87" fill="#1535A0"/>
+    <rect x="676" y="165" width="14" height="87" fill="#1535A0"/>
+    <path d="M 626 210 Q 653 170 690 210" fill="none" stroke="#1535A0" stroke-width="14"/>
+    <path d="M 640 210 Q 653 180 676 210 L 676 252 L 640 252 Z" fill="#E30A17" opacity="0.9"/>
+    <rect x="620" y="163" width="26" height="8" fill="#1535A0"/>
+    <rect x="670" y="163" width="26" height="8" fill="#1535A0"/>
+
+    <!-- Right mosque -->
+    <rect x="750" y="193" width="8" height="59" fill="#1E40AF"/>
+    <polygon points="750,193 754,178 758,193" fill="#1535A0"/>
+    <rect x="747" y="189" width="14" height="5" fill="#1535A0"/>
+    <rect x="835" y="193" width="8" height="59" fill="#1E40AF"/>
+    <polygon points="835,193 839,178 843,193" fill="#1535A0"/>
+    <rect x="832" y="189" width="14" height="5" fill="#1535A0"/>
+    <rect x="762" y="226" width="75" height="26" fill="#1E40AF"/>
+    <ellipse cx="799" cy="226" rx="37" ry="24" fill="#1535A0"/>
+    <ellipse cx="773" cy="235" rx="15" ry="10" fill="#1E40AF"/>
+    <ellipse cx="825" cy="235" rx="15" ry="10" fill="#1E40AF"/>
+
+    <!-- Far-right rocky formations -->
+    <polygon points="856,270 868,210 882,232 896,195 910,215 924,195 938,218 952,270" fill="#1E40AF"/>
+    <polygon points="948,270 960,205 975,228 990,198 1000,215 1000,270" fill="#1535A0" opacity="0.8"/>
+
+    <!-- Hot air balloon (center upper) -->
+    <ellipse cx="500" cy="48" rx="33" ry="42" fill="#DC2626"/>
+    <!-- Balloon stripes -->
+    <rect x="467" y="42" width="66" height="6" fill="#FFF7ED" opacity="0.75"/>
+    <rect x="470" y="28" width="60" height="6" fill="#FFF7ED" opacity="0.75"/>
+    <rect x="470" y="56" width="60" height="6" fill="#FFF7ED" opacity="0.75"/>
+    <!-- Basket -->
+    <rect x="491" y="89" width="18" height="12" fill="#92400E" rx="1"/>
+    <line x1="492" y1="89" x2="481" y2="84" stroke="#92400E" stroke-width="1.5"/>
+    <line x1="508" y1="89" x2="519" y2="84" stroke="#92400E" stroke-width="1.5"/>
+
+    <!-- Decorative dots/stars -->
+    <circle cx="350" cy="115" r="4" fill="#1E40AF" opacity="0.7"/>
+    <circle cx="660" cy="125" r="4" fill="#1E40AF" opacity="0.7"/>
+    <circle cx="175" cy="148" r="3" fill="#1E40AF" opacity="0.55"/>
+    <circle cx="830" cy="142" r="3" fill="#1E40AF" opacity="0.55"/>
+    <circle cx="388" cy="155" r="2.5" fill="#1E40AF" opacity="0.5"/>
+    <circle cx="620" cy="148" r="2.5" fill="#1E40AF" opacity="0.5"/>
+    <circle cx="500" cy="5" r="3" fill="#1E40AF" opacity="0.4"/>
+  </svg>
+
 </div>
 
 <!-- MAIN LAYOUT -->
 <div class="main-layout" *ngIf="!showIntro()">
-  
+
   <!-- LEFT: CHAT SECTION -->
   <div class="chat-section">
     <div class="chat-header">
-      <h2>🇹🇷 Rehber</h2>
-      <p>Yapay Zeka Destekli Seyahat Asistanınız</p>
+      <div class="chat-header-icon">
+        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="15" fill="#E30A17"/>
+          <polygon points="15,5 18,12 26,12 20,17 22,25 15,20 8,25 10,17 4,12 12,12" fill="white"/>
+        </svg>
+      </div>
+      <div class="chat-header-text">
+        <h2>Rehber</h2>
+        <p>Yapay Zeka Destekli Seyahat Asistanınız</p>
+      </div>
     </div>
-    
+
     <div class="chat-messages" #chatScrollContainer>
       <div class="message" *ngFor="let msg of messages()" [ngClass]="msg.role">
-        <div class="avatar" *ngIf="msg.role === 'assistant'">🤖</div>
-        <div class="bubble">
-          {{ msg.content }}
+        <div class="avatar" *ngIf="msg.role === 'assistant'">
+          <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#E30A17"/>
+            <polygon points="11,3.5 13.5,9 20,9 15,13 17,19.5 11,15.5 5,19.5 7,13 2,9 8.5,9" fill="white"/>
+          </svg>
         </div>
+        <div class="bubble">{{ msg.content }}</div>
       </div>
       <div class="message assistant" *ngIf="isLoading()">
-        <div class="avatar">🤖</div>
+        <div class="avatar">
+          <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#E30A17"/>
+            <polygon points="11,3.5 13.5,9 20,9 15,13 17,19.5 11,15.5 5,19.5 7,13 2,9 8.5,9" fill="white"/>
+          </svg>
+        </div>
         <div class="bubble typing">
           <span class="dot"></span>
           <span class="dot"></span>
@@ -35,14 +165,14 @@
         </div>
       </div>
     </div>
-    
+
     <div class="chat-input-wrapper">
       <div class="chat-input-box">
-        <input 
-          type="text" 
-          [ngModel]="userInput()" 
+        <input
+          type="text"
+          [ngModel]="userInput()"
           (ngModelChange)="onInputChange($event)"
-          (keyup.enter)="sendMessage()" 
+          (keyup.enter)="sendMessage()"
           placeholder="Nereyi keşfetmek istersiniz?"
           [disabled]="isLoading()"
         />
@@ -55,31 +185,172 @@
     </div>
   </div>
 
-  <!-- RIGHT: VISUALS FLOW -->
-  <div class="visuals-section">
-    <div class="image-flow">
-      <!-- Column 1 -->
-      <div class="image-column">
-        <div class="image-card" *ngFor="let img of images"><img [src]="img" alt="Türkiye" /></div>
-        <div class="image-card" *ngFor="let img of images"><img [src]="img" alt="Türkiye" /></div>
+  <!-- RIGHT: PHOTO PANEL -->
+  <div class="photo-panel">
+
+    <!-- Corner decorations -->
+    <svg class="panel-corner corner-tl" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M0 110 Q0 0 110 0" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
+      <path d="M0 80 Q0 0 80 0" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
+      <path d="M0 50 Q0 0 50 0" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
+      <circle cx="0" cy="0" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
+      <polygon points="0,-90 8,-8 90,0 8,8 0,90 -8,8 -90,0 -8,-8" fill="#2B4DB8" opacity="0.1"/>
+      <circle cx="0" cy="0" r="10" fill="#2B4DB8" opacity="0.22"/>
+    </svg>
+    <svg class="panel-corner corner-tr" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M130 110 Q130 0 20 0" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
+      <path d="M130 80 Q130 0 50 0" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
+      <path d="M130 50 Q130 0 80 0" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
+      <circle cx="130" cy="0" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
+      <circle cx="130" cy="0" r="10" fill="#2B4DB8" opacity="0.22"/>
+    </svg>
+    <svg class="panel-corner corner-bl" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M0 20 Q0 130 110 130" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
+      <path d="M0 50 Q0 130 80 130" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
+      <path d="M0 80 Q0 130 50 130" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
+      <circle cx="0" cy="130" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
+      <circle cx="0" cy="130" r="10" fill="#2B4DB8" opacity="0.22"/>
+    </svg>
+    <svg class="panel-corner corner-br" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M130 20 Q130 130 20 130" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
+      <path d="M130 50 Q130 130 50 130" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
+      <path d="M130 80 Q130 130 80 130" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
+      <circle cx="130" cy="130" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
+      <circle cx="130" cy="130" r="10" fill="#2B4DB8" opacity="0.22"/>
+    </svg>
+
+    <!-- Welcome text (cream area, top-left) -->
+    <div class="panel-welcome">
+      <p class="welcome-line1">Welcome to</p>
+      <p class="welcome-line2">Türkiye!</p>
+    </div>
+
+    <!-- Slide content: photo + stamp (fades together) -->
+    <div class="slide-content" [class.slide-hidden]="!slideVisible()">
+
+      <!-- Photo with torn paper left edge -->
+      <div class="photo-area">
+        <img [src]="slides[currentSlide()].photo" [alt]="slides[currentSlide()].alt" class="photo-img"/>
       </div>
-      <!-- Column 2 (Reverse) -->
-      <div class="image-column reverse">
-        <div class="image-card" *ngFor="let img of imagesReverse"><img [src]="img" alt="Türkiye" /></div>
-        <div class="image-card" *ngFor="let img of imagesReverse"><img [src]="img" alt="Türkiye" /></div>
-      </div>
-      <!-- Column 3 -->
-      <div class="image-column">
-        <div class="image-card" *ngFor="let img of images"><img [src]="img" alt="Türkiye" /></div>
-        <div class="image-card" *ngFor="let img of images"><img [src]="img" alt="Türkiye" /></div>
+
+      <!-- Postage stamp sticker -->
+      <div class="stamp-container">
+
+        <!-- ISTANBUL / MOSQUE STAMP -->
+        <div class="stamp stamp-mosque" *ngIf="slides[currentSlide()].stamp === 'mosque'">
+          <svg viewBox="0 0 130 108" xmlns="http://www.w3.org/2000/svg" class="stamp-art">
+            <rect width="130" height="108" fill="#DBEAFE"/>
+            <rect y="88" width="130" height="20" fill="#C4A882"/>
+            <!-- Left minaret -->
+            <rect x="20" y="26" width="9" height="62" fill="#1D4ED8"/>
+            <polygon points="20,26 24.5,14 29,26" fill="#1D4ED8"/>
+            <rect x="17" y="22" width="15" height="5" fill="#1D4ED8"/>
+            <!-- Right minaret -->
+            <rect x="101" y="26" width="9" height="62" fill="#1D4ED8"/>
+            <polygon points="101,26 105.5,14 110,26" fill="#1D4ED8"/>
+            <rect x="98" y="22" width="15" height="5" fill="#1D4ED8"/>
+            <!-- Mosque body -->
+            <rect x="37" y="65" width="56" height="23" fill="#1D4ED8"/>
+            <!-- Main dome -->
+            <ellipse cx="65" cy="65" rx="32" ry="21" fill="#1D4ED8"/>
+            <!-- Side domes -->
+            <ellipse cx="38" cy="73" rx="14" ry="9" fill="#2563EB"/>
+            <ellipse cx="92" cy="73" rx="14" ry="9" fill="#2563EB"/>
+            <!-- Stars -->
+            <circle cx="65" cy="36" r="3" fill="white" opacity="0.55"/>
+            <circle cx="46" cy="46" r="2" fill="white" opacity="0.4"/>
+            <circle cx="84" cy="42" r="2" fill="white" opacity="0.4"/>
+          </svg>
+          <div class="stamp-label">TÜRKİYE · İSTANBUL</div>
+        </div>
+
+        <!-- CAPPADOCIA / BALLOON STAMP -->
+        <div class="stamp stamp-balloon" *ngIf="slides[currentSlide()].stamp === 'balloon'">
+          <svg viewBox="0 0 130 108" xmlns="http://www.w3.org/2000/svg" class="stamp-art">
+            <rect width="130" height="108" fill="#BAE6FD"/>
+            <!-- Rocky landscape -->
+            <polygon points="0,108 14,70 26,88 40,60 54,78 68,55 82,74 96,62 110,78 124,65 130,72 130,108" fill="#C2845F"/>
+            <polygon points="0,108 12,82 24,95 38,74 52,88 65,70 78,82 92,72 106,84 118,74 130,80 130,108" fill="#A0694A"/>
+            <!-- Balloon -->
+            <ellipse cx="65" cy="40" rx="28" ry="36" fill="#DC2626"/>
+            <rect x="37" y="36" width="56" height="5" fill="#FFF7ED" opacity="0.7"/>
+            <rect x="40" y="23" width="50" height="5" fill="#FFF7ED" opacity="0.7"/>
+            <rect x="40" y="49" width="50" height="5" fill="#FFF7ED" opacity="0.7"/>
+            <!-- Basket -->
+            <rect x="57" y="75" width="16" height="10" fill="#78350F" rx="1"/>
+            <line x1="58" y1="75" x2="49" y2="71" stroke="#78350F" stroke-width="1.5"/>
+            <line x1="72" y1="75" x2="81" y2="71" stroke="#78350F" stroke-width="1.5"/>
+            <!-- Birds -->
+            <circle cx="18" cy="22" r="2.5" fill="#64748B" opacity="0.6"/>
+            <circle cx="108" cy="28" r="2.5" fill="#64748B" opacity="0.6"/>
+          </svg>
+          <div class="stamp-label">TÜRKİYE · KAPADOKYA</div>
+        </div>
+
+        <!-- ANTALYA / BEACH STAMP -->
+        <div class="stamp stamp-beach" *ngIf="slides[currentSlide()].stamp === 'beach'">
+          <svg viewBox="0 0 130 108" xmlns="http://www.w3.org/2000/svg" class="stamp-art">
+            <!-- Sky -->
+            <rect width="130" height="54" fill="#7DD3FC"/>
+            <!-- Sea -->
+            <rect y="54" width="130" height="36" fill="#0369A1"/>
+            <!-- Beach/sand -->
+            <rect y="90" width="130" height="18" fill="#FDE68A"/>
+            <!-- Left cliff -->
+            <polygon points="0,0 0,78 28,62 14,0" fill="#78716C"/>
+            <!-- Right cliff -->
+            <polygon points="130,0 130,82 102,66 116,0" fill="#57534E"/>
+            <!-- Sun -->
+            <circle cx="65" cy="22" r="14" fill="#FCD34D"/>
+            <line x1="65" y1="4" x2="65" y2="0" stroke="#FCD34D" stroke-width="2.5"/>
+            <line x1="65" y1="44" x2="65" y2="40" stroke="#FCD34D" stroke-width="2.5"/>
+            <line x1="47" y1="22" x2="43" y2="22" stroke="#FCD34D" stroke-width="2.5"/>
+            <line x1="87" y1="22" x2="83" y2="22" stroke="#FCD34D" stroke-width="2.5"/>
+            <!-- Wave lines -->
+            <path d="M 30 64 Q 52 59 75 64 Q 98 69 118 64" fill="none" stroke="white" stroke-width="1.5" opacity="0.5"/>
+            <path d="M 22 74 Q 48 69 72 74 Q 96 79 118 74" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+            <!-- Beach umbrella -->
+            <line x1="75" y1="92" x2="75" y2="107" stroke="#78350F" stroke-width="1.5"/>
+            <path d="M 60 93 Q 75 82 90 93" fill="#DC2626"/>
+          </svg>
+          <div class="stamp-label">TÜRKİYE · ANTALYA</div>
+        </div>
+
+        <!-- KARADENIZ / VILLAGE STAMP -->
+        <div class="stamp stamp-village" *ngIf="slides[currentSlide()].stamp === 'village'">
+          <svg viewBox="0 0 130 108" xmlns="http://www.w3.org/2000/svg" class="stamp-art">
+            <!-- Sky -->
+            <rect width="130" height="108" fill="#BAE6FD"/>
+            <!-- Mountains -->
+            <polygon points="0,108 0,56 22,30 50,50 75,22 105,44 130,32 130,108" fill="#15803D"/>
+            <polygon points="0,108 0,70 18,52 44,65 64,42 90,58 115,46 130,55 130,108" fill="#16A34A"/>
+            <!-- Lake -->
+            <rect y="82" width="130" height="26" fill="#38BDF8" opacity="0.78"/>
+            <path d="M 10 90 Q 38 86 65 90 Q 92 94 118 90" fill="none" stroke="white" stroke-width="1.2" opacity="0.5"/>
+            <!-- Mosque -->
+            <rect x="48" y="50" width="24" height="32" fill="white"/>
+            <ellipse cx="60" cy="50" rx="13" ry="9" fill="white"/>
+            <!-- Minaret -->
+            <rect x="58" y="27" width="8" height="30" fill="white"/>
+            <polygon points="58,27 62,15 66,27" fill="white"/>
+            <!-- Trees -->
+            <polygon points="14,82 20,60 26,82" fill="#166534"/>
+            <polygon points="102,78 108,58 114,78" fill="#166534"/>
+          </svg>
+          <div class="stamp-label">TÜRKİYE · KARADENİZ</div>
+        </div>
+
       </div>
     </div>
-    
-    <div class="visuals-overlay">
-      <div class="overlay-content">
-        <h1>Büyülü <span>Türkiye'yi</span> Keşfedin.</h1>
-        <p>Binlerce yıllık tarih, eşsiz doğal güzellikler ve unutulmaz lezzetler. Yolculuğunuza hemen başlayın.</p>
-      </div>
+
+    <!-- Slide indicator dots -->
+    <div class="slide-dots">
+      <span
+        class="slide-dot"
+        *ngFor="let slide of slides; let i = index"
+        [class.active]="i === currentSlide()"
+      ></span>
     </div>
+
   </div>
 </div>
