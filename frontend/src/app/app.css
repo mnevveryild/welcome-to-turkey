@@ -218,7 +218,7 @@
 
 .message.user .bubble {
   background: var(--red);
-  color: white;
+  color: rgb(0, 0, 0);
   border-bottom-right-radius: 4px;
 }
 
