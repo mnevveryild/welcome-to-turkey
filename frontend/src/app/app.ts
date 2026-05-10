@@ -36,24 +36,26 @@ export class App implements OnInit, OnDestroy, AfterViewChecked {
   @ViewChild('chatScrollContainer') private chatScrollContainer!: ElementRef;
 
   slides: Slide[] = [
-    { photo: 'images/istanbul-kiz-kulesi-mobil_1.png', alt: 'Kız Kulesi · İstanbul' },
-    { photo: 'images/istanbul-gezilecek-yerler-gorulmesi-gereken-yerler-1044x587.webp', alt: 'İstanbul' },
-    { photo: 'images/Peri-Bacalari.jpg', alt: 'Peri Bacaları · Kapadokya' },
+    { photo: 'images/HD-wallpaper-istanbul-galatakulesi-manzara-turkey.jpg', alt: 'Galata Kulesi · İstanbul' },
+    { photo: 'images/fd89223056e350ae524f6c6120198677-Bluemosqueistanbul.avif', alt: 'Sultan Ahmet Camii · İstanbul' },
+    { photo: 'images/istanbul_da-manzara-izlemek-icin-en-iyi-10-yer.webp', alt: 'İstanbul Manzarası' },
+    { photo: 'images/peri bacaları.jpg', alt: 'Peri Bacaları · Kapadokya' },
     { photo: 'images/pamukkale-traverterleri.webp', alt: 'Travertenler · Pamukkale' },
-    { photo: 'images/halfeti.jpg', alt: 'Halfeti · Şanlıurfa' },
+    { photo: 'images/halfeti-1024x683.webp', alt: 'Halfeti · Şanlıurfa' },
     { photo: 'images/nemrut-dagi-1024x576.jpg', alt: 'Nemrut Dağı · Adıyaman' },
     { photo: 'images/20260107151607028_0052 SANLIURFA Gobeklitepe Murat OCAL JPG kopya.jpg', alt: 'Göbeklitepe · Şanlıurfa' },
     { photo: 'images/Likya-Yolu.jpg', alt: 'Likya Yolu · Muğla' },
+    { photo: 'images/ceceva_koyu_1638279590_4548.webp', alt: 'Cece Koyu · Fethiye' },
     { photo: 'images/bodrum-3.jpg', alt: 'Bodrum · Muğla' },
     { photo: 'images/Cesme_600x600.webp', alt: 'Çeşme · İzmir' },
+    { photo: 'images/Bergama-Antik-Kenti.jpg', alt: 'Bergama Antik Kenti · İzmir' },
     { photo: 'images/anitkabir-gezisi-ankara-gezi-rehberi.jpeg', alt: 'Anıtkabir · Ankara' },
     { photo: 'images/sehitler-aniti-56808.webp', alt: 'Şehitler Anıtı · Gelibolu' },
-    { photo: 'images/ancient-city-of-the-trojan.jpg', alt: 'Antik Troya · Çanakkale' },
-    { photo: 'images/antik.jpg', alt: 'Antik Kent' },
+    { photo: 'images/truva-ati.jpg', alt: 'Truva Atı · Çanakkale' },
     { photo: 'images/mersin-tarihi-yerler.jpg', alt: 'Tarihi Yerler · Mersin' },
     { photo: 'images/sumela-manastiri_original.webp', alt: 'Sümela Manastırı · Trabzon' },
-    { photo: 'images/shutterstock_1037667796.jpg', alt: 'Türkiye' },
-    { photo: 'images/images.jpg', alt: 'Türkiye' },
+    { photo: 'images/pokut-yaylasi-gezilesiyer.jpg', alt: 'Pokut Yaylası · Rize' },
+    { photo: 'images/uzungol2asa-700x386.jpg.webp', alt: 'Uzungöl · Trabzon' },
   ];
 
   private slideInterval?: ReturnType<typeof setInterval>;
