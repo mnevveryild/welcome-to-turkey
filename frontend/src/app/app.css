@@ -352,44 +352,35 @@
   overflow: hidden;
 }
 
-/* Corner decorations */
-.panel-corner {
+/* Caption overlay at bottom of photo */
+.photo-caption {
   position: absolute;
-  width: 140px;
-  height: 140px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 32px 28px;
+  background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 100%);
   pointer-events: none;
-  z-index: 5;
-}
-.panel-corner.corner-tl { top: -10px; left: -10px; }
-.panel-corner.corner-tr { top: -10px; right: -10px; }
-.panel-corner.corner-bl { bottom: -10px; left: -10px; }
-.panel-corner.corner-br { bottom: -10px; right: -10px; }
-
-/* "Türkiye'yi Keşfet!" text overlaid on photo */
-.panel-welcome {
-  position: absolute;
-  bottom: 40px;
-  left: 32px;
   z-index: 4;
-  pointer-events: none;
 }
 
 .welcome-line1 {
   font-family: 'Pacifico', cursive;
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
-  color: white;
-  margin: 0 0 4px 0;
+  font-size: clamp(1.1rem, 1.6vw, 1.5rem);
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 6px 0;
   line-height: 1.2;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
 
-.welcome-line2 {
-  font-family: 'Pacifico', cursive;
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+.photo-location {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 700;
   color: white;
   margin: 0;
-  line-height: 1.1;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 /* ─── SLIDE CONTENT ──────────────────────────────────────────── */
@@ -430,7 +421,5 @@
   }
 
   .photo-panel { height: 45vh; }
-
-  .panel-welcome { display: none; }
 
 }

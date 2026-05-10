@@ -189,47 +189,14 @@
   <!-- RIGHT: PHOTO PANEL -->
   <div class="photo-panel">
 
-    <!-- Corner decorations -->
-    <svg class="panel-corner corner-tl" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <path d="M0 110 Q0 0 110 0" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
-      <path d="M0 80 Q0 0 80 0" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
-      <path d="M0 50 Q0 0 50 0" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
-      <circle cx="0" cy="0" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
-      <polygon points="0,-90 8,-8 90,0 8,8 0,90 -8,8 -90,0 -8,-8" fill="#2B4DB8" opacity="0.1"/>
-      <circle cx="0" cy="0" r="10" fill="#2B4DB8" opacity="0.22"/>
-    </svg>
-    <svg class="panel-corner corner-tr" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <path d="M130 110 Q130 0 20 0" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
-      <path d="M130 80 Q130 0 50 0" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
-      <path d="M130 50 Q130 0 80 0" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
-      <circle cx="130" cy="0" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
-      <circle cx="130" cy="0" r="10" fill="#2B4DB8" opacity="0.22"/>
-    </svg>
-    <svg class="panel-corner corner-bl" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <path d="M0 20 Q0 130 110 130" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
-      <path d="M0 50 Q0 130 80 130" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
-      <path d="M0 80 Q0 130 50 130" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
-      <circle cx="0" cy="130" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
-      <circle cx="0" cy="130" r="10" fill="#2B4DB8" opacity="0.22"/>
-    </svg>
-    <svg class="panel-corner corner-br" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <path d="M130 20 Q130 130 20 130" stroke="#2B4DB8" stroke-width="2" opacity="0.35"/>
-      <path d="M130 50 Q130 130 50 130" stroke="#2B4DB8" stroke-width="1.5" opacity="0.3"/>
-      <path d="M130 80 Q130 130 80 130" stroke="#2B4DB8" stroke-width="1" opacity="0.25"/>
-      <circle cx="130" cy="130" r="115" stroke="#2B4DB8" stroke-width="1" opacity="0.18"/>
-      <circle cx="130" cy="130" r="10" fill="#2B4DB8" opacity="0.22"/>
-    </svg>
-
-    <!-- Welcome text (cream area, top-left) -->
-    <div class="panel-welcome">
-      <p class="welcome-line1">Türkiye'yi</p>
-      <p class="welcome-line2">Keşfet!</p>
-    </div>
-
     <!-- Slide content: photo (fades) -->
     <div class="slide-content" [class.slide-hidden]="!slideVisible()">
       <div class="photo-area">
         <img [src]="slides[currentSlide()].photo" [alt]="slides[currentSlide()].alt" class="photo-img"/>
+        <div class="photo-caption">
+          <p class="welcome-line1">Türkiye'yi Keşfet</p>
+          <p class="photo-location">{{ slides[currentSlide()].alt }}</p>
+        </div>
       </div>
     </div>
 
