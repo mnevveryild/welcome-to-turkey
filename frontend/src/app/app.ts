@@ -8,11 +8,8 @@ interface Message {
   content: string;
 }
 
-type StampType = 'mosque' | 'balloon' | 'beach' | 'village';
-
 interface Slide {
   photo: string;
-  stamp: StampType;
   alt: string;
 }
 
@@ -39,26 +36,22 @@ export class App implements OnInit, OnDestroy, AfterViewChecked {
   @ViewChild('chatScrollContainer') private chatScrollContainer!: ElementRef;
 
   slides: Slide[] = [
-    {
-      photo: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&q=80&w=1400',
-      stamp: 'mosque',
-      alt: 'İstanbul'
-    },
-    {
-      photo: 'https://images.unsplash.com/photo-1566438480900-0609be27a4be?auto=format&fit=crop&q=80&w=1400',
-      stamp: 'balloon',
-      alt: 'Kapadokya'
-    },
-    {
-      photo: 'https://images.unsplash.com/photo-1581430872221-d1fbefb26616?auto=format&fit=crop&q=80&w=1400',
-      stamp: 'beach',
-      alt: 'Antalya'
-    },
-    {
-      photo: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?auto=format&fit=crop&q=80&w=1400',
-      stamp: 'village',
-      alt: 'Karadeniz'
-    },
+    { photo: 'images/istanbulda-gezilecek-yerler.webp', alt: 'İstanbul' },
+    { photo: 'images/Peri-Bacalari.jpg', alt: 'Kapadokya' },
+    { photo: 'images/pamukkale-traverterleri.webp', alt: 'Pamukkale' },
+    { photo: 'images/halfeti.jpg', alt: 'Halfeti' },
+    { photo: 'images/nemrut-dagi-1024x576.jpg', alt: 'Nemrut Dağı' },
+    { photo: 'images/20260107151607028_0052 SANLIURFA Gobeklitepe Murat OCAL JPG kopya.jpg', alt: 'Göbeklitepe' },
+    { photo: 'images/Likya-Yolu.jpg', alt: 'Likya Yolu' },
+    { photo: 'images/bodrum-3.jpg', alt: 'Bodrum' },
+    { photo: 'images/Cesme_600x600.webp', alt: 'Çeşme' },
+    { photo: 'images/ankara-anitkabir-2496.webp', alt: 'Anıtkabir' },
+    { photo: 'images/gelibolu-34009.webp', alt: 'Gelibolu' },
+    { photo: 'images/ancient-city-of-the-trojan.jpg', alt: 'Troya' },
+    { photo: 'images/antik.jpg', alt: 'Antik Kent' },
+    { photo: 'images/mersin-tarihi-yerler.jpg', alt: 'Mersin' },
+    { photo: 'images/sumela-manastiri_original.webp', alt: 'Sümela Manastırı' },
+    { photo: 'images/3.1-768x512-1.webp', alt: 'Türkiye' },
   ];
 
   private slideInterval?: ReturnType<typeof setInterval>;
