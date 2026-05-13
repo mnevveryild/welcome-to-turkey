@@ -1,0 +1,11 @@
+<div class="photo-panel">
+  <div class="slide-content" [class.slide-hidden]="!slideVisible()">
+    <div class="photo-area">
+      <img [src]="slides[currentSlide()].photo" [alt]="slides[currentSlide()].alt" class="photo-img"/>
+      <div class="photo-caption">
+        <p class="welcome-line1">Türkiye'yi Keşfet</p>
+        <p class="photo-location">{{ slides[currentSlide()].alt }}</p>
+      </div>
+    </div>
+  </div>
+</div>

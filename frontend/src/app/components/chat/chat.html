@@ -1,0 +1,64 @@
+<div class="chat-section">
+  <div class="chat-header">
+    <div class="chat-header-icon">
+      <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="15" cy="15" r="15" fill="#E30A17"/>
+        <polygon points="15,5 18,12 26,12 20,17 22,25 15,20 8,25 10,17 4,12 12,12" fill="white"/>
+      </svg>
+    </div>
+    <div class="chat-header-text">
+      <h2>Rehber</h2>
+      <p>Yapay Zeka Destekli Seyahat Asistanınız</p>
+    </div>
+  </div>
+
+  <div class="chat-messages" #chatScrollContainer>
+    <div class="message" *ngFor="let msg of messages()" [ngClass]="msg.role">
+      @if (msg.role === 'assistant') {
+        <div class="avatar">
+          <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#E30A17"/>
+            <polygon points="11,3.5 13.5,9 20,9 15,13 17,19.5 11,15.5 5,19.5 7,13 2,9 8.5,9" fill="white"/>
+          </svg>
+        </div>
+        <div class="bubble" [innerHTML]="formatMessage(msg.content)"></div>
+      } @else {
+        <div class="bubble">{{ msg.content }}</div>
+      }
+    </div>
+
+    @if (isLoading()) {
+      <div class="message assistant">
+        <div class="avatar">
+          <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="11" cy="11" r="11" fill="#E30A17"/>
+            <polygon points="11,3.5 13.5,9 20,9 15,13 17,19.5 11,15.5 5,19.5 7,13 2,9 8.5,9" fill="white"/>
+          </svg>
+        </div>
+        <div class="bubble typing">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="chat-input-wrapper">
+    <div class="chat-input-box">
+      <input
+        type="text"
+        [ngModel]="userInput()"
+        (ngModelChange)="userInput.set($event)"
+        (keyup.enter)="sendMessage()"
+        placeholder="Nereyi keşfetmek istersiniz?"
+        [disabled]="isLoading()"
+      />
+      <button class="send-btn" (click)="sendMessage()" [disabled]="isLoading() || !userInput().trim()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3.478 2.404a.75.75 0 00-.926.941l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.404z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
